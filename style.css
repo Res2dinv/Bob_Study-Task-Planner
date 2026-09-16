@@ -1,0 +1,190 @@
+/* =========================================================
+   Study Task Planner — Supplementary Styles
+   Tailwind utility classes handle the majority of styling.
+   This file covers patterns that are inconvenient to express
+   purely with Tailwind utilities (e.g. reusable component
+   classes and custom focus/transition rules).
+   ========================================================= */
+
+/* ── Filter Tabs ─────────────────────────────────────────── */
+.filter-tab {
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid #cbd5e1;        /* slate-300 */
+  background-color: #ffffff;
+  color: #475569;                   /* slate-600 */
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-tab:hover {
+  background-color: #eff6ff;        /* blue-50 */
+  border-color: #93c5fd;            /* blue-300 */
+  color: #1d4ed8;                   /* blue-700 */
+}
+
+.filter-tab.tab-active {
+  background-color: #1d4ed8;        /* blue-700 */
+  border-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.filter-tab:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ── Task Card ───────────────────────────────────────────── */
+.task-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;       /* slate-200 */
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.06);
+  transition: box-shadow 0.15s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.08);
+}
+
+.task-card.completed-card {
+  background-color: #f8fafc;       /* slate-50 */
+  border-color: #e2e8f0;
+}
+
+/* ── Inline Edit Inputs ──────────────────────────────────── */
+.edit-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #93c5fd;       /* blue-300 */
+  padding: 0.375rem 0.625rem;
+  font-size: 0.875rem;
+  color: #1e293b;                  /* slate-800 */
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.edit-input:focus {
+  border-color: #3b82f6;           /* blue-500 */
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+/* ── Action Buttons ──────────────────────────────────────── */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-icon:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.btn-complete {
+  background-color: #ecfdf5;
+  border-color: #6ee7b7;
+  color: #065f46;
+}
+.btn-complete:hover {
+  background-color: #d1fae5;
+}
+
+.btn-restore {
+  background-color: #eff6ff;
+  border-color: #93c5fd;
+  color: #1e40af;
+}
+.btn-restore:hover {
+  background-color: #dbeafe;
+}
+
+.btn-edit {
+  background-color: #fefce8;
+  border-color: #fde68a;
+  color: #92400e;
+}
+.btn-edit:hover {
+  background-color: #fef9c3;
+}
+
+.btn-save {
+  background-color: #eff6ff;
+  border-color: #93c5fd;
+  color: #1e40af;
+}
+.btn-save:hover {
+  background-color: #dbeafe;
+}
+
+.btn-cancel {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+.btn-cancel:hover {
+  background-color: #f1f5f9;
+}
+
+.btn-delete {
+  background-color: #fff1f2;
+  border-color: #fecdd3;
+  color: #9f1239;
+}
+.btn-delete:hover {
+  background-color: #ffe4e6;
+}
+
+/* ── Status Badge ────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-active {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* ── Strikethrough for completed titles ──────────────────── */
+.title-completed {
+  text-decoration: line-through;
+  color: #94a3b8;                  /* slate-400 */
+}
+
+/* ── Validation error reveal ─────────────────────────────── */
+.field-error {
+  border-color: #f87171 !important; /* red-400 */
+}
+
+/* ── Hide number-input spin arrows on date-part fields ───────────────────── */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
